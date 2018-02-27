@@ -1,0 +1,9 @@
+.App {
+  max-width: 720px;
+  margin: 0 auto;
+  font-family: 'Source Sans Pro', sans-serif;
+}
+
+.open-sans {
+  font-family: 'Open Sans', sans-serif;
+}
