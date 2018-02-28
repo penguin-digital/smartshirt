@@ -12,3 +12,22 @@
   right: -250px;
   top: 0;
 }
+
+.overlay {
+  background-color: rgba(226, 226, 226, 0.75);
+  height: 100%;
+  width: 100%;
+  position: relative;
+}
+.nav {
+  margin-top: 3rem;
+}
+.nav__item {
+  font-size: 18px;
+  line-height: 23px;
+  text-align: center;
+  display: block;
+  text-decoration: none;
+  color: #000000;
+  margin-bottom: 1rem;
+}
