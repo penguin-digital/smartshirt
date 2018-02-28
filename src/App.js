@@ -6,6 +6,7 @@ import Home from './containers/Home';
 import Settings from './containers/Settings';
 import Blockly from './containers/Blockly';
 import Header from './Header';
+import Footer from './Footer';
 
 // icons
 
@@ -24,6 +25,7 @@ class App extends Component {
               <Route path="/blockly" component={Blockly} />
             </Switch>
           </div>
+          <Footer />
         </div>
       </Router>
     );

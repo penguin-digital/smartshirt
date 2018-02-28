@@ -39,6 +39,7 @@ export default class Header extends React.Component {
                   <NavLink
                     onClick={this.toggleMobileMenu}
                     className="nav__item"
+                    exact
                     to="/"
                   >
                     Startseite
