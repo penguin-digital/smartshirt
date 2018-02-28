@@ -1,5 +1,5 @@
-import React from 'react'
+import React from 'react';
 
-const Blockly = ({}) => <div>Blockly</div>
+const Blockly = ({}) => <div className="container">Blockly</div>;
 
-export default Blockly
+export default Blockly;

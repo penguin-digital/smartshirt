@@ -2,6 +2,7 @@
   max-width: 720px;
   margin: 0 auto;
   font-family: 'Source Sans Pro', sans-serif;
+  overflow: hidden;
 }
 
 .open-sans {
@@ -13,15 +14,34 @@
   top: 0;
 }
 
-.overlay {
-  background-color: rgba(226, 226, 226, 0.75);
-  height: 100%;
+header {
+  box-shadow: 0 5px 6px 0 rgba(0, 0, 0, 0.13);
+  position: absolute;
+  max-width: 720px;
   width: 100%;
-  position: relative;
+  z-index: 10;
+  background-color: #ffffff;
 }
+
+.overlay {
+  max-width: 720px;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(226, 226, 226, 0.75);
+  position: absolute;
+  z-index: 5;
+}
+
+.container {
+  margin-top: 5rem;
+}
+
 .nav {
-  margin-top: 3rem;
+  z-index: 10;
+  width: 100%;
+  margin-top: 2rem;
 }
+
 .nav__item {
   font-size: 18px;
   line-height: 23px;

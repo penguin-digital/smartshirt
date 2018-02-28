@@ -1,8 +1,8 @@
-import React from 'react'
-import shirt from '../assets/images/shirt.png'
+import React from 'react';
+import shirt from '../assets/images/shirt.png';
 
 const Home = () => (
-  <div className="relative">
+  <div className="relative container">
     <div className="mt7 fl">
       <h1 className="fw9 f2">
         Willkomen auf<br />
@@ -16,6 +16,6 @@ const Home = () => (
     </div>
     <img src={shirt} class="absolute shirt-image" alt="" />
   </div>
-)
+);
 
-export default Home
+export default Home;

@@ -20,64 +20,71 @@ export default class Header extends React.Component {
 
   render() {
     return (
-      <header>
+      <div>
         {this.state.isMobileMenuOpen ? (
-          <div className="App-header ph2 pv3 cf">
-            <Link to="/">
-              <h2 className="App-title fl ma0 black f3">SmartShirt</h2>
-            </Link>
-            <img
-              onClick={this.toggleMobileMenu}
-              src={close}
-              alt="Menu"
-              className="fr mt2 pointer"
-            />
-            <div className="nav">
-              <NavLink
-                onClick={this.toggleMobileMenu}
-                className="nav__item"
-                to="/"
-              >
-                Startseite
-              </NavLink>
-              <NavLink
-                onClick={this.toggleMobileMenu}
-                className="nav__item"
-                to="/settings"
-              >
-                Einstellungen
-              </NavLink>
-              <NavLink
-                onClick={this.toggleMobileMenu}
-                className="nav__item"
-                to="/blockly"
-              >
-                Blockly
-              </NavLink>
-              <NavLink
-                onClick={this.toggleMobileMenu}
-                className="nav__item"
-                to="/"
-              >
-                Partner
-              </NavLink>
-            </div>
+          <div className="overlay" onClick={this.toggleMobileMenu}>
+            <header>
+              <div className="App-header ph2 pv3 cf">
+                <Link to="/">
+                  <h2 className="App-title fl ma0 black f3">SmartShirt</h2>
+                </Link>
+                <img
+                  onClick={this.toggleMobileMenu}
+                  src={close}
+                  alt="Menu"
+                  className="fr mt2 pointer"
+                />
+
+                <div className="nav">
+                  <NavLink
+                    onClick={this.toggleMobileMenu}
+                    className="nav__item"
+                    to="/"
+                  >
+                    Startseite
+                  </NavLink>
+                  <NavLink
+                    onClick={this.toggleMobileMenu}
+                    className="nav__item"
+                    to="/settings"
+                  >
+                    Einstellungen
+                  </NavLink>
+                  <NavLink
+                    onClick={this.toggleMobileMenu}
+                    className="nav__item"
+                    to="/blockly"
+                  >
+                    Blockly
+                  </NavLink>
+                  <NavLink
+                    onClick={this.toggleMobileMenu}
+                    className="nav__item"
+                    to="/"
+                  >
+                    Partner
+                  </NavLink>
+                </div>
+              </div>
+            </header>
           </div>
         ) : (
-          <div className="App-header ph2 pv3 cf">
-            <Link to="/">
-              <h2 className="App-title fl ma0 black f3">SmartShirt</h2>
-            </Link>
+          <header>
+            <div className="App-header ph2 pv3 cf">
+              <Link to="/">
+                <h2 className="App-title fl ma0 black f3">SmartShirt</h2>
+              </Link>
 
-            <img
-              onClick={this.toggleMobileMenu}
-              src={menu}
-              alt="Menu"
-              className="fr mt2 pointer"
-            />
-          </div>
+              <img
+                onClick={this.toggleMobileMenu}
+                src={menu}
+                alt="Menu"
+                className="fr mt2 pointer"
+              />
+            </div>
+          </header>
         )}
-      </header>
+      </div>
     );
   }
 }
