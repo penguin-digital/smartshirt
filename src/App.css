@@ -2,7 +2,7 @@
   max-width: 720px;
   margin: 0 auto;
   font-family: 'Source Sans Pro', sans-serif;
-  overflow: hidden;
+  overflow-x: hidden;
 }
 
 .open-sans {
@@ -23,6 +23,7 @@ header {
   width: 100%;
   z-index: 10;
   background-color: #ffffff;
+  top: 0;
 }
 
 .overlay {
@@ -90,4 +91,20 @@ header {
 .bottom_nav--item.active {
   border-bottom: 6px solid #5646f5;
   height: 65px;
+}
+
+/* SETTINGS */
+input [type='text'] {
+  border: 1px solid #d0d0d0;
+}
+
+.apply {
+  height: 50px;
+  line-height: 50px;
+  width: 30%;
+  background-color: #5646f5;
+}
+
+.colors {
+  display: flex;
 }

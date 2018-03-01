@@ -16,7 +16,7 @@ class App extends Component {
   render() {
     return (
       <Router>
-        <div className="App overflow-hidden vh-100">
+        <div className="App vh-100">
           <Header />
           <div className="ph2">
             <Switch>
