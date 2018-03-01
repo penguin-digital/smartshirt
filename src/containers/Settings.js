@@ -79,9 +79,9 @@ export default class Settings extends React.Component {
         <div className="f4 pv2">Brau: {this.state.range4}</div>
 
         <div className="colors">
-          <div className="bg-yellow w-20 h2 mr3 mv4" />
-          <div className="bg-blue w-20 h2 mr3 mv4" />
-          <div className="bg-purple w-20 h2 mr3 mv4" />
+          <div className="bg-yellow w-10 h2 mr3 mv4" />
+          <div className="bg-blue w-10 h2 mr3 mv4" />
+          <div className="bg-purple w-10 h2 mr3 mv4" />
         </div>
 
         <div className="f2 pv4 fw6"> Emoticons </div>

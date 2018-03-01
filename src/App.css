@@ -82,10 +82,19 @@ header {
   align-self: flex-end;
 }
 
-.bottom_nav--item > img {
+.bottom_nav--item > .icon--not-active,
+.bottom_nav--item > .icon--active {
   width: 100%;
   height: 25px;
   margin-top: 20px;
+}
+
+.bottom_nav--item:not(.active) > .icon--active {
+  display: none;
+}
+
+.bottom_nav--item.active > .icon--not-active {
+  display: none;
 }
 
 .bottom_nav--item.active {
