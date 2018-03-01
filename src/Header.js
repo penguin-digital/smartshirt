@@ -1,21 +1,22 @@
-import React from 'react';
-import { BrowserRouter as Link, NavLink } from 'react-router-dom';
-import menu from './assets/icons/menu.svg';
-import close from './assets/icons/close.svg';
+import React from 'react'
+import { BrowserRouter as Link, NavLink } from 'react-router-dom'
+import menu from './assets/icons/menu.svg'
+import close from './assets/icons/close.svg'
+import line from './assets/icons/line.svg'
 
 export default class Header extends React.Component {
   constructor(props) {
-    super(props);
+    super(props)
 
     this.state = {
       isMobileMenuOpen: false
-    };
+    }
 
-    this.toggleMobileMenu = this.toggleMobileMenu.bind(this);
+    this.toggleMobileMenu = this.toggleMobileMenu.bind(this)
   }
 
   toggleMobileMenu() {
-    this.setState({ isMobileMenuOpen: !this.state.isMobileMenuOpen });
+    this.setState({ isMobileMenuOpen: !this.state.isMobileMenuOpen })
   }
 
   render() {
@@ -42,13 +43,14 @@ export default class Header extends React.Component {
                     exact
                     to="/"
                   >
-                    Startseite
+                    <img className="nav__line" src={line} alt="" /> Startseite
                   </NavLink>
                   <NavLink
                     onClick={this.toggleMobileMenu}
                     className="nav__item"
                     to="/settings"
                   >
+                    <img className="nav__line" src={line} alt="" />{' '}
                     Einstellungen
                   </NavLink>
                   <NavLink
@@ -56,14 +58,14 @@ export default class Header extends React.Component {
                     className="nav__item"
                     to="/blockly"
                   >
-                    Blockly
+                    <img className="nav__line" src={line} alt="" /> Blockly
                   </NavLink>
                   <NavLink
                     onClick={this.toggleMobileMenu}
                     className="nav__item"
-                    to="/"
+                    to="#"
                   >
-                    Partner
+                    <img className="nav__line" src={line} alt="" /> Partner
                   </NavLink>
                 </div>
               </div>
@@ -86,6 +88,6 @@ export default class Header extends React.Component {
           </header>
         )}
       </div>
-    );
+    )
   }
 }

@@ -54,6 +54,16 @@ header {
   margin-bottom: 1rem;
 }
 
+.nav__item > img {
+  display: none;
+}
+.nav__item.active > img {
+  display: inline;
+  position: absolute;
+  margin-top: 0.7rem;
+  margin-left: -3rem;
+}
+
 /* FOOTER */
 
 .bottom_nav {
