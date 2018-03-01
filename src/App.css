@@ -17,7 +17,6 @@
 /* HEADER */
 
 header {
-  box-shadow: 0 5px 6px 0 rgba(0, 0, 0, 0.13);
   position: absolute;
   max-width: 720px;
   width: 100%;
@@ -59,7 +58,6 @@ header {
 .bottom_nav {
   max-width: 720px;
   width: 100%;
-  position: relative;
   z-index: 3;
   display: flex;
 }

@@ -1,18 +1,18 @@
-import React from 'react';
-import { BrowserRouter as Link, NavLink } from 'react-router-dom';
-import data from './assets/icons/data.svg';
-import block from './assets/icons/block.svg';
-import settings from './assets/icons/settings.svg';
-import home from './assets/icons/home.svg';
+import React from 'react'
+import { BrowserRouter as Link, NavLink } from 'react-router-dom'
+import data from './assets/icons/data.svg'
+import block from './assets/icons/block.svg'
+import settings from './assets/icons/settings.svg'
+import home from './assets/icons/home.svg'
 
 export default class Footer extends React.Component {
   constructor(props) {
-    super(props);
+    super(props)
   }
 
   render() {
     return (
-      <div className="bottom_nav">
+      <div className="bottom_nav fixed bottom-0">
         <NavLink className="bottom_nav--item" exact to="/">
           <img className="bottom_nav--image" src={home} />
         </NavLink>
@@ -26,6 +26,6 @@ export default class Footer extends React.Component {
           <img src={block} />
         </NavLink>
       </div>
-    );
+    )
   }
 }

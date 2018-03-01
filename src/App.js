@@ -1,24 +1,24 @@
-import React, { Component } from 'react';
-import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom';
+import React, { Component } from 'react'
+import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom'
 
 // views
-import Home from './containers/Home';
-import Settings from './containers/Settings';
-import Blockly from './containers/Blockly';
-import Header from './Header';
-import Footer from './Footer';
+import Home from './containers/Home'
+import Settings from './containers/Settings'
+import Blockly from './containers/Blockly'
+import Header from './Header'
+import Footer from './Footer'
 
 // icons
 
-import './App.css';
+import './App.css'
 
 class App extends Component {
   render() {
     return (
       <Router>
-        <div className="App overflow-hidden">
+        <div className="App overflow-hidden vh-100">
           <Header />
-          <div className="ph2 vh-100">
+          <div className="ph2">
             <Switch>
               <Route exact path="/" component={Home} />
               <Route path="/settings" component={Settings} />
@@ -28,8 +28,8 @@ class App extends Component {
           <Footer />
         </div>
       </Router>
-    );
+    )
   }
 }
 
-export default App;
+export default App
