@@ -20,7 +20,7 @@ export default class Settings extends React.Component {
 
   render() {
     return (
-      <div className="relative container">
+      <div className="relative container w-90 center">
         <div className="f2 fw6 pv5">Laufschrift</div>
         <input
           type="text"
@@ -78,7 +78,7 @@ export default class Settings extends React.Component {
         />
         <div className="f4 pv2">Brau: {this.state.range4}</div>
 
-        <div className="colors">
+        <div className="flex">
           <div className="bg-yellow w-10 h2 mr3 mv4" />
           <div className="bg-blue w-10 h2 mr3 mv4" />
           <div className="bg-purple w-10 h2 mr3 mv4" />

@@ -113,7 +113,3 @@ input [type='text'] {
   width: 30%;
   background-color: #5646f5;
 }
-
-.colors {
-  display: flex;
-}

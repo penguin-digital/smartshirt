@@ -50,7 +50,7 @@ export default class Header extends React.Component {
                     className="nav__item"
                     to="/settings"
                   >
-                    <img className="nav__line" src={line} alt="" />{' '}
+                    <img className="nav__line" src={line} alt="" />
                     Einstellungen
                   </NavLink>
                   <NavLink

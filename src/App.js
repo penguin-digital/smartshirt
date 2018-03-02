@@ -4,6 +4,7 @@ import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
 // views
 import Home from './containers/Home'
 import Settings from './containers/Settings'
+import Data from './containers/Data'
 import Blockly from './containers/Blockly'
 import Header from './Header'
 import Footer from './Footer'
@@ -21,6 +22,7 @@ class App extends Component {
           <div className="ph2">
             <Switch>
               <Route exact path="/" component={Home} />
+              <Route path="/data" component={Data} />
               <Route path="/settings" component={Settings} />
               <Route path="/blockly" component={Blockly} />
             </Switch>

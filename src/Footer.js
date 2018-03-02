@@ -15,7 +15,7 @@ const Footer = () => (
       <img className="icon--not-active" alt="" src={home} />
       <img className="icon--active" alt="" src={homePurple} />
     </NavLink>
-    <NavLink className="bottom_nav--item" to="#">
+    <NavLink className="bottom_nav--item" to="/data">
       <img className="icon--not-active" alt="" src={data} />
       <img className="icon--active" alt="" src={dataPurple} />
     </NavLink>
