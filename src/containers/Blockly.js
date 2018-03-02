@@ -1,42 +1,42 @@
 import React, { Component } from 'react'
-import CodeMirror from 'react-codemirror'
-import 'codemirror/lib/codemirror.css'
-import 'codemirror/mode/javascript/javascript'
+import Blockly from 'node-blockly/browser'
 
-class Blockly extends Component {
-  constructor(props) {
-    super(props)
-    this.state = {
-      code: '// Write your code here'
-    }
+import BlocklyDrawer, { Block, Category } from 'react-blockly-drawer'
 
-    this.updateCode = this.updateCode.bind(this)
-  }
-
-  updateCode(newCode) {
-    this.setState({
-      code: newCode
-    })
-  }
-
+class BlocklyEditor extends Component {
   render() {
-    var options = {
-      lineNumbers: false,
-      mode: 'javascript'
-    }
     return (
-      <div className="mt6">
-        <p className="f4">
-          Language: <b>JavaScript</b>
-        </p>
-        <CodeMirror
-          value={this.state.code}
-          onChange={this.updateCode}
-          options={options}
-        />
+      <div style={{ marginTop: '60px' }}>
+        <BlocklyDrawer
+          workspaceXML={'<xml id="toolbox" style="height: 600px"></xml>'}
+        >
+          <Category name="Logic" colour="210">
+            <Block type="controls_if" />
+            <Block type="logic_compare" />
+            <Block type="logic_operation" />
+            <Block type="logic_negate" />
+            <Block type="logic_boolean" />
+          </Category>
+          <Category name="Loops" colour="120">
+            <Block type="controls_repeat_ext" />
+            <Block type="controls_whileUntil" />
+          </Category>
+          <Category name="Math" colour="230">
+            <Block type="math_number" />
+            <Block type="math_arithmetic" />
+            <Block type="math_single" />
+          </Category>
+          <Category name="Text" colour="20">
+            <Block type="text" />
+            <Block type="text_length" />
+            <Block type="text_print" />
+          </Category>
+          <Category name="Variables" colour="330" custom="VARIABLE" />
+          <Category name="Functions" colour="290" custom="PROCEDURE" />
+        </BlocklyDrawer>
       </div>
     )
   }
 }
 
-export default Blockly
+export default BlocklyEditor
