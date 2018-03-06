@@ -14,7 +14,7 @@ Blockly.Blocks['init_strip'] = {
 
 Blockly.Python['init_strip'] = function(block) {
   return [
-    'from smartshirt import *\nstrip = Adafruit_NeoPixel(LED_COUNT, LED_PIN, LED_FREQ_HZ, LED_DMA, LED_INVERT, LED_BRIGHTNESS, LED_CHANNEL, LED_STRIP)\nstrip.begin()\n'
+    'from smartshirt import *\nstrip = Adafruit_NeoPixel(LED_COUNT, LED_PIN, LED_FREQ_HZ, LED_DMA, LED_INVERT, LED_BRIGHTNESS, LED_CHANNEL, LED_STRIP)\nstrip.begin()\n\n'
   ]
 }
 
@@ -129,7 +129,7 @@ Blockly.Blocks['rainbow'] = {
 }
 
 Blockly.Python['rainbow'] = function(block) {
-  return ['rainbow(strip)\n']
+  return 'rainbow(strip)\n'
 }
 
 Blockly.Blocks['rainbowCycle'] = {
@@ -145,7 +145,7 @@ Blockly.Blocks['rainbowCycle'] = {
 }
 
 Blockly.Python['rainbowCycle'] = function(block) {
-  return ['rainbowCycle(strip)\n']
+  return 'rainbowCycle(strip)\n'
 }
 
 Blockly.Blocks['theaterChaseRainbow'] = {
@@ -161,7 +161,7 @@ Blockly.Blocks['theaterChaseRainbow'] = {
 }
 
 Blockly.Python['theaterChaseRainbow'] = function(block) {
-  return ['theaterChaseRainbow(strip)\n']
+  return 'theaterChaseRainbow(strip)\n'
 }
 
 export default `<xml id="toolbox" style="display: none">

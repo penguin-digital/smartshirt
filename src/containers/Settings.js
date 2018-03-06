@@ -18,6 +18,8 @@ export default class Settings extends React.Component {
     }
   }
 
+  componentWillUpdate(nextProps, nextState) {}
+
   render() {
     return (
       <div className="relative container w-90 center">

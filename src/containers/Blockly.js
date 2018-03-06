@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
-import CodeMirror from 'react-codemirror'
+import { UnControlled as CodeMirror } from 'react-codemirror2'
+
 import xmlCode from './toolbox'
 import workspaceCode from './workspace'
 
@@ -23,13 +24,7 @@ class BlocklyEditor extends Component {
 
     this.Blockly = window.Blockly
   }
-  updateCode = newCode => {
-    this.setState({
-      source: newCode
-    })
-  }
   toggleCode = () => {
-    this.refs.code.getCodeMirror().refresh()
     this.setState({
       viewingCode: !this.state.viewingCode
     })
@@ -52,7 +47,7 @@ class BlocklyEditor extends Component {
   }
   render() {
     const { viewingCode, source } = this.state
-    console.log(source)
+
     return (
       <div style={{ marginTop: '60px' }}>
         <div
@@ -62,19 +57,21 @@ class BlocklyEditor extends Component {
           {viewingCode ? 'View Blocks' : 'View Code'}
         </div>
 
-        <CodeMirror
-          autoFocus
-          ref="code"
-          className={`${!viewingCode ? 'dn' : ''}`}
-          value={source[0]}
-          onChange={this.updateCode}
-          options={this.codeMirrorOtions}
-        />
         <div
           ref="blocklyDiv"
           id="blocklyDiv"
           className={`${viewingCode ? 'dn' : ''}`}
           style={{ height: '90vh', width: '100%' }}
+        />
+
+        <CodeMirror
+          value={source}
+          className={`${!viewingCode ? 'hidden' : ''}`}
+          options={{
+            mode: 'python',
+            lineNumbers: true
+          }}
+          onChange={(editor, data, value) => {}}
         />
       </div>
     )
