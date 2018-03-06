@@ -33,7 +33,7 @@ export default class Settings extends React.Component {
         />
         <div className="pv2"> {this.state.text}</div>
 
-        <div className="apply fw6 mt4 mb4 white f4 tc">Apply</div>
+        <div className="apply btn fw6 mt4 mb4 white f4 tc">Apply</div>
 
         <div className="f3 pv4">Helligkeit</div>
         <input

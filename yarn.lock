@@ -1425,7 +1425,7 @@ code-point-at@^1.0.0:
   version "1.1.0"
   resolved "https://registry.yarnpkg.com/code-point-at/-/code-point-at-1.1.0.tgz#0d070b4d043a5bea33a2f1a40e2edb3d9a4ccf77"
 
-codemirror@^5.18.2:
+codemirror@^5.18.2, codemirror@^5.35.0:
   version "5.35.0"
   resolved "https://registry.yarnpkg.com/codemirror/-/codemirror-5.35.0.tgz#280653d495455bc66aa87e6284292b02775ba878"
 
@@ -3190,10 +3190,6 @@ ieee754@^1.1.4:
 ignore@^3.3.3:
   version "3.3.7"
   resolved "https://registry.yarnpkg.com/ignore/-/ignore-3.3.7.tgz#612289bfb3c220e186a58118618d5be8c1bab021"
-
-immutable@^3.8.2:
-  version "3.8.2"
-  resolved "https://registry.yarnpkg.com/immutable/-/immutable-3.8.2.tgz#c2439951455bb39913daf281376f1530e104adf3"
 
 import-lazy@^2.1.0:
   version "2.1.0"
@@ -5308,14 +5304,6 @@ rc@^1.0.1, rc@^1.1.6, rc@^1.1.7:
     minimist "^1.2.0"
     strip-json-comments "~2.0.1"
 
-react-blockly-component@^3.0.1:
-  version "3.0.1"
-  resolved "https://registry.yarnpkg.com/react-blockly-component/-/react-blockly-component-3.0.1.tgz#2478b66f8d913c95ce032404ea058378e70d079d"
-  dependencies:
-    immutable "^3.8.2"
-    prop-types "^15.6.0"
-    react-immutable-proptypes "^2.1.0"
-
 react-blockly-drawer@^1.4.0:
   version "1.4.0"
   resolved "https://registry.yarnpkg.com/react-blockly-drawer/-/react-blockly-drawer-1.4.0.tgz#1a545d6ea79329e5fb4cd79663b54857d5c5271c"
@@ -5370,10 +5358,6 @@ react-dom@^16.2.0:
 react-error-overlay@^4.0.0:
   version "4.0.0"
   resolved "https://registry.yarnpkg.com/react-error-overlay/-/react-error-overlay-4.0.0.tgz#d198408a85b4070937a98667f500c832f86bd5d4"
-
-react-immutable-proptypes@^2.1.0:
-  version "2.1.0"
-  resolved "https://registry.yarnpkg.com/react-immutable-proptypes/-/react-immutable-proptypes-2.1.0.tgz#023d6f39bb15c97c071e9e60d00d136eac5fa0b4"
 
 react-router-dom@^4.2.2:
   version "4.2.2"

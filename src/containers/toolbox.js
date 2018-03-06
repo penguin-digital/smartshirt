@@ -5,7 +5,7 @@ Blockly.Blocks['init_strip'] = {
     this.jsonInit({
       message0: 'Initialise strip',
       "nextStatement": null,
-      colour: 20,
+      colour: 30,
       tooltip: 'Import all from smartshirt, fire Adafruit_NeoPixel and strip.begin().'
     })
   }
@@ -50,7 +50,7 @@ Blockly.Blocks['color_wipe'] = {
       ],
       "previousStatement": null,
       "nextStatement": null,
-      "colour": 40,
+      colour: 30,
       "tooltip": "Select colorWipe color",
       "helpUrl": ""
     })
@@ -99,7 +99,7 @@ Blockly.Blocks['theater_chase'] = {
       ],
       "previousStatement": null,
       "nextStatement": null,
-      "colour": 60,
+      colour: 30,
       "tooltip": "Select theaterChase color",
       "helpUrl": ""
     })
@@ -120,7 +120,7 @@ Blockly.Blocks['rainbow'] = {
       message0: 'Rainbow',
       "previousStatement": null,
       "nextStatement": null,
-      colour: 80,
+      colour: 30,
       tooltip: 'Run rainbow()'
     })
   }
@@ -137,7 +137,7 @@ Blockly.Blocks['rainbowCycle'] = {
       message0: 'Rainbow Cycle',
       "previousStatement": null,
       "nextStatement": null,
-      colour: 100,
+      colour: 30,
       tooltip: 'Run rainbowCycle()'
     })
   }
@@ -154,7 +154,7 @@ Blockly.Blocks['theaterChaseRainbow'] = {
       message0: 'Theater Chace Rainbow',
       "previousStatement": null,
       "nextStatement": null,
-      colour: 120,
+      colour: 30,
       tooltip: 'Run theaterChaseRainbow()'
     })
   }

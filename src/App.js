@@ -19,7 +19,7 @@ class App extends Component {
       <Router>
         <div className="App vh-100">
           <Header />
-          <div className="ph4 mw8 wrapper">
+          <div className="ph4 mw8 wrapper relative">
             <Switch>
               <Route exact path="/" component={Home} />
               <Route path="/data" component={Data} />
