@@ -1,169 +1,168 @@
-import Blockly from 'node-blockly/browser'
+const Blockly = window.Blockly
 
 Blockly.Blocks['init_strip'] = {
   init: function() {
     this.jsonInit({
       message0: 'Initialise strip',
-      "nextStatement": null,
+      nextStatement: null,
       colour: 30,
-      tooltip: 'Import all from smartshirt, fire Adafruit_NeoPixel and strip.begin().'
+      tooltip:
+        'Import all from smartshirt, fire Adafruit_NeoPixel and strip.begin().'
     })
   }
 }
 
-
 Blockly.Python['init_strip'] = function(block) {
-  return ['from smartshirt import *\nstrip = Adafruit_NeoPixel(LED_COUNT, LED_PIN, LED_FREQ_HZ, LED_DMA, LED_INVERT, LED_BRIGHTNESS, LED_CHANNEL, LED_STRIP)\nstrip.begin()\n'];
-};
+  return [
+    'from smartshirt import *\nstrip = Adafruit_NeoPixel(LED_COUNT, LED_PIN, LED_FREQ_HZ, LED_DMA, LED_INVERT, LED_BRIGHTNESS, LED_CHANNEL, LED_STRIP)\nstrip.begin()\n'
+  ]
+}
 
 Blockly.Blocks['color_wipe'] = {
   init: function() {
     this.jsonInit({
-      "type": "color_wipe",
-      "message0": "Color Wipe - Red %1 Green %2 Blue %3 %4",
-      "args0": [
+      type: 'color_wipe',
+      message0: 'Color Wipe - Red %1 Green %2 Blue %3 %4',
+      args0: [
         {
-          "type": "field_number",
-          "name": "Red",
-          "value": 0,
-          "min": 0,
-          "max": 255
+          type: 'field_number',
+          name: 'Red',
+          value: 0,
+          min: 0,
+          max: 255
         },
         {
-          "type": "field_number",
-          "name": "Green",
-          "value": 0,
-          "min": 0,
-          "max": 255
+          type: 'field_number',
+          name: 'Green',
+          value: 0,
+          min: 0,
+          max: 255
         },
         {
-          "type": "field_number",
-          "name": "Blue",
-          "value": 0,
-          "min": 0,
-          "max": 255
+          type: 'field_number',
+          name: 'Blue',
+          value: 0,
+          min: 0,
+          max: 255
         },
         {
-          "type": "input_value",
-          "name": "Color Wipe"
+          type: 'input_value',
+          name: 'Color Wipe'
         }
       ],
-      "previousStatement": null,
-      "nextStatement": null,
+      previousStatement: null,
+      nextStatement: null,
       colour: 30,
-      "tooltip": "Select colorWipe color",
-      "helpUrl": ""
+      tooltip: 'Select colorWipe color',
+      helpUrl: ''
     })
   }
 }
 
 Blockly.Python['color_wipe'] = function(block) {
-  var number_red = block.getFieldValue('Red');
-  var number_green = block.getFieldValue('Green');
-  var number_blue = block.getFieldValue('Blue');
+  var number_red = block.getFieldValue('Red')
+  var number_green = block.getFieldValue('Green')
+  var number_blue = block.getFieldValue('Blue')
 
-  return `colorWipe(strip, Color(${number_red}, ${number_green}, ${number_blue}))\n`;
-};
+  return `colorWipe(strip, Color(${number_red}, ${number_green}, ${number_blue}))\n`
+}
 
 Blockly.Blocks['theater_chase'] = {
   init: function() {
     this.jsonInit({
-      "type": "theater_chase",
-      "message0": "Theater Chace - Red %1 Green %2 Blue %3 %4",
-      "args0": [
+      type: 'theater_chase',
+      message0: 'Theater Chace - Red %1 Green %2 Blue %3 %4',
+      args0: [
         {
-          "type": "field_number",
-          "name": "Red",
-          "value": 0,
-          "min": 0,
-          "max": 255
+          type: 'field_number',
+          name: 'Red',
+          value: 0,
+          min: 0,
+          max: 255
         },
         {
-          "type": "field_number",
-          "name": "Green",
-          "value": 0,
-          "min": 0,
-          "max": 255
+          type: 'field_number',
+          name: 'Green',
+          value: 0,
+          min: 0,
+          max: 255
         },
         {
-          "type": "field_number",
-          "name": "Blue",
-          "value": 0,
-          "min": 0,
-          "max": 255
+          type: 'field_number',
+          name: 'Blue',
+          value: 0,
+          min: 0,
+          max: 255
         },
         {
-          "type": "input_value",
-          "name": "Theater Chace"
+          type: 'input_value',
+          name: 'Theater Chace'
         }
       ],
-      "previousStatement": null,
-      "nextStatement": null,
+      previousStatement: null,
+      nextStatement: null,
       colour: 30,
-      "tooltip": "Select theaterChase color",
-      "helpUrl": ""
+      tooltip: 'Select theaterChase color',
+      helpUrl: ''
     })
   }
 }
 
 Blockly.Python['theater_chase'] = function(block) {
-  var number_red = block.getFieldValue('Red');
-  var number_green = block.getFieldValue('Green');
-  var number_blue = block.getFieldValue('Blue');
+  var number_red = block.getFieldValue('Red')
+  var number_green = block.getFieldValue('Green')
+  var number_blue = block.getFieldValue('Blue')
 
-  return `theaterChase(strip, Color(${number_red}, ${number_green}, ${number_blue}))\n`;
-};
+  return `theaterChase(strip, Color(${number_red}, ${number_green}, ${number_blue}))\n`
+}
 
 Blockly.Blocks['rainbow'] = {
   init: function() {
     this.jsonInit({
       message0: 'Rainbow',
-      "previousStatement": null,
-      "nextStatement": null,
+      previousStatement: null,
+      nextStatement: null,
       colour: 30,
       tooltip: 'Run rainbow()'
     })
   }
 }
 
-
 Blockly.Python['rainbow'] = function(block) {
-  return ['rainbow(strip)\n'];
-};
+  return ['rainbow(strip)\n']
+}
 
 Blockly.Blocks['rainbowCycle'] = {
   init: function() {
     this.jsonInit({
       message0: 'Rainbow Cycle',
-      "previousStatement": null,
-      "nextStatement": null,
+      previousStatement: null,
+      nextStatement: null,
       colour: 30,
       tooltip: 'Run rainbowCycle()'
     })
   }
 }
 
-
 Blockly.Python['rainbowCycle'] = function(block) {
-  return ['rainbowCycle(strip)\n'];
-};
+  return ['rainbowCycle(strip)\n']
+}
 
 Blockly.Blocks['theaterChaseRainbow'] = {
   init: function() {
     this.jsonInit({
       message0: 'Theater Chace Rainbow',
-      "previousStatement": null,
-      "nextStatement": null,
+      previousStatement: null,
+      nextStatement: null,
       colour: 30,
       tooltip: 'Run theaterChaseRainbow()'
     })
   }
 }
 
-
 Blockly.Python['theaterChaseRainbow'] = function(block) {
-  return ['theaterChaseRainbow(strip)\n'];
-};
+  return ['theaterChaseRainbow(strip)\n']
+}
 
 export default `<xml id="toolbox" style="display: none">
     <category name="Smartshirt">

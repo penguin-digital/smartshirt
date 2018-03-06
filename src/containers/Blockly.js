@@ -1,6 +1,5 @@
 import React, { Component } from 'react'
 import CodeMirror from 'react-codemirror'
-import Blockly from 'node-blockly/browser'
 import xmlCode from './toolbox'
 import workspaceCode from './workspace'
 
@@ -21,6 +20,8 @@ class BlocklyEditor extends Component {
       mode: 'python',
       readOnly: true
     }
+
+    this.Blockly = window.Blockly
   }
   updateCode = newCode => {
     this.setState({
@@ -34,21 +35,24 @@ class BlocklyEditor extends Component {
     })
   }
   componentDidMount() {
-    const workspace = Blockly.inject('blocklyDiv', {
+    const workspace = this.Blockly.inject('blocklyDiv', {
       toolbox: xmlCode
     })
 
-    Blockly.Xml.domToWorkspace(Blockly.Xml.textToDom(workspaceCode), workspace)
+    this.Blockly.Xml.domToWorkspace(
+      this.Blockly.Xml.textToDom(workspaceCode),
+      workspace
+    )
 
     workspace.addChangeListener(() => {
       this.setState({
-        source: Blockly.Python.workspaceToCode(workspace)
+        source: this.Blockly.Python.workspaceToCode(workspace)
       })
     })
   }
   render() {
     const { viewingCode, source } = this.state
-
+    console.log(source)
     return (
       <div style={{ marginTop: '60px' }}>
         <div
