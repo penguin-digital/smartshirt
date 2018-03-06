@@ -5,9 +5,8 @@ Blockly.Blocks['init_strip'] = {
     this.jsonInit({
       message0: 'Initialise strip',
       "nextStatement": null,
-      colour: 160,
-      tooltip: 'Import all from smartshirt, fire Adafruit_NeoPixel and strip.begin().',
-      helpUrl: 'http://www.w3schools.com/jsref/jsref_length_string.asp'
+      colour: 20,
+      tooltip: 'Import all from smartshirt, fire Adafruit_NeoPixel and strip.begin().'
     })
   }
 }
@@ -21,7 +20,7 @@ Blockly.Blocks['color_wipe'] = {
   init: function() {
     this.jsonInit({
       "type": "color_wipe",
-      "message0": "Color Red %1 Green %2 Blue %3 %4",
+      "message0": "Color Wipe - Red %1 Green %2 Blue %3 %4",
       "args0": [
         {
           "type": "field_number",
@@ -51,7 +50,7 @@ Blockly.Blocks['color_wipe'] = {
       ],
       "previousStatement": null,
       "nextStatement": null,
-      "colour": 230,
+      "colour": 40,
       "tooltip": "Select colorWipe color",
       "helpUrl": ""
     })
@@ -62,15 +61,117 @@ Blockly.Python['color_wipe'] = function(block) {
   var number_red = block.getFieldValue('Red');
   var number_green = block.getFieldValue('Green');
   var number_blue = block.getFieldValue('Blue');
-  var value_color_wipe = Blockly.JavaScript.valueToCode(block, 'Color Wipe', Blockly.JavaScript.ORDER_ATOMIC);
 
   return `colorWipe(strip, Color(${number_red}, ${number_green}, ${number_blue}))\n`;
+};
+
+Blockly.Blocks['theater_chase'] = {
+  init: function() {
+    this.jsonInit({
+      "type": "theater_chase",
+      "message0": "Theater Chace - Red %1 Green %2 Blue %3 %4",
+      "args0": [
+        {
+          "type": "field_number",
+          "name": "Red",
+          "value": 0,
+          "min": 0,
+          "max": 255
+        },
+        {
+          "type": "field_number",
+          "name": "Green",
+          "value": 0,
+          "min": 0,
+          "max": 255
+        },
+        {
+          "type": "field_number",
+          "name": "Blue",
+          "value": 0,
+          "min": 0,
+          "max": 255
+        },
+        {
+          "type": "input_value",
+          "name": "Theater Chace"
+        }
+      ],
+      "previousStatement": null,
+      "nextStatement": null,
+      "colour": 60,
+      "tooltip": "Select theaterChase color",
+      "helpUrl": ""
+    })
+  }
+}
+
+Blockly.Python['theater_chase'] = function(block) {
+  var number_red = block.getFieldValue('Red');
+  var number_green = block.getFieldValue('Green');
+  var number_blue = block.getFieldValue('Blue');
+
+  return `theaterChase(strip, Color(${number_red}, ${number_green}, ${number_blue}))\n`;
+};
+
+Blockly.Blocks['rainbow'] = {
+  init: function() {
+    this.jsonInit({
+      message0: 'Rainbow',
+      "previousStatement": null,
+      "nextStatement": null,
+      colour: 80,
+      tooltip: 'Run rainbow()'
+    })
+  }
+}
+
+
+Blockly.Python['rainbow'] = function(block) {
+  return ['rainbow(strip)\n'];
+};
+
+Blockly.Blocks['rainbowCycle'] = {
+  init: function() {
+    this.jsonInit({
+      message0: 'Rainbow Cycle',
+      "previousStatement": null,
+      "nextStatement": null,
+      colour: 100,
+      tooltip: 'Run rainbowCycle()'
+    })
+  }
+}
+
+
+Blockly.Python['rainbowCycle'] = function(block) {
+  return ['rainbowCycle(strip)\n'];
+};
+
+Blockly.Blocks['theaterChaseRainbow'] = {
+  init: function() {
+    this.jsonInit({
+      message0: 'Theater Chace Rainbow',
+      "previousStatement": null,
+      "nextStatement": null,
+      colour: 120,
+      tooltip: 'Run theaterChaseRainbow()'
+    })
+  }
+}
+
+
+Blockly.Python['theaterChaseRainbow'] = function(block) {
+  return ['theaterChaseRainbow(strip)\n'];
 };
 
 export default `<xml id="toolbox" style="display: none">
     <category name="Smartshirt">
       <block type="init_strip"></block>
       <block type="color_wipe"></block>
+      <block type="rainbow"></block>
+      <block type="rainbowCycle"></block>
+      <block type="theaterChaseRainbow"></block>
     </category>
     <category name="Logic">
       <category name="If">
