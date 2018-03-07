@@ -29,13 +29,13 @@ class App extends Component {
 
     let ws_url = 'ws://localhost:80/ws'
 
-    if (typeof window !== 'undefined') {
-      if (window.location.protocol == 'http:') {
-        ws_url = 'ws://' + window.location.host + '/ws'
-      } else if (window.location.protocol == 'https:') {
-        ws_url = 'wss://' + window.location.host + '/ws'
-      }
-    }
+    // if (typeof window !== 'undefined') {
+    //   if (window.location.protocol === 'http:') {
+    //     ws_url = 'ws://' + window.location.host + '/ws'
+    //   } else if (window.location.protocol === 'https:') {
+    //     ws_url = 'wss://' + window.location.host + '/ws'
+    //   }
+    // }
 
     this.ws = new Sockette(ws_url, {
       timeout: 5e3,
@@ -61,18 +61,23 @@ class App extends Component {
         this.setState({
           ws_msg: 'Connected'
         }),
+      onreconnect: e =>
+        this.setState({
+          ws_msg: 'Reconnecting...'
+        }),
       onclose: e =>
         this.setState({
           ws_msg: 'Disconnected'
         }),
       onerror: e =>
         this.setState({
-          ws_msg: 'WebSocket Error'
+          ws_msg: 'Websocket Error'
         })
     })
   }
   render() {
     const { temp, lux, blue, red, green, color_temp, ws_msg } = this.state
+
     return (
       <Router>
         <div className="App vh-100">

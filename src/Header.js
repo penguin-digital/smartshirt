@@ -28,7 +28,6 @@ export default class Header extends React.Component {
               <div className="App-header ph2 pv3 cf">
                 <Link to="/">
                   <h2 className="App-title fl ma0 black f3">SmartShirt</h2>
-                  <span className="pl3">{this.props.msg}</span>
                 </Link>
                 <img
                   onClick={this.toggleMobileMenu}
@@ -78,13 +77,16 @@ export default class Header extends React.Component {
               <Link to="/">
                 <h2 className="App-title fl ma0 black f3">SmartShirt</h2>
               </Link>
-
               <img
                 onClick={this.toggleMobileMenu}
                 src={menu}
                 alt="Menu"
                 className="fr mt2 pointer"
               />
+
+              <span className="pl3" style={{ verticalAlign: 'sub' }}>
+                {this.props.msg}
+              </span>
             </div>
           </header>
         )}
