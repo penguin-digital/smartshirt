@@ -82,22 +82,17 @@ class App extends Component {
       <Router>
         <div className="App vh-100">
           <Header msg={ws_msg} />
-          <div className="ph4 mw8 wrapper relative">
-            <Switch>
-              <Route exact path="/" component={Home} />
-              <Route
-                path="/data"
-                render={() => (
-                  <Data data={{ temp, lux, blue, red, green, color_temp }} />
-                )}
-              />
-              <Route
-                path="/settings"
-                render={() => <Settings ws={this.ws} />}
-              />
-              <Route path="/blockly" render={() => <Blockly ws={this.ws} />} />
-            </Switch>
-          </div>
+          <Switch>
+            <Route exact path="/" component={Home} />
+            <Route
+              path="/data"
+              render={() => (
+                <Data data={{ temp, lux, blue, red, green, color_temp }} />
+              )}
+            />
+            <Route path="/settings" render={() => <Settings ws={this.ws} />} />
+            <Route path="/blockly" render={() => <Blockly ws={this.ws} />} />
+          </Switch>
           <Footer />
         </div>
       </Router>

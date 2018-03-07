@@ -57,37 +57,50 @@ class BlocklyEditor extends Component {
     const { viewingCode, source } = this.state
 
     return (
-      <div style={{ marginTop: '60px' }}>
-        <div
-          ref="blocklyDiv"
-          id="blocklyDiv"
-          className={`${viewingCode ? 'dn' : ''}`}
-          style={{ height: 'calc(100vh - 220px)', width: '100%' }}
-        />
+      <div className="mw7-m wrapper relative">
+        <div style={{ marginTop: '60px' }}>
+          <div className="blockly-container">
+            <div
+              ref="blocklyDiv"
+              id="blocklyDiv"
+              className={`${viewingCode ? 'dn' : ''} blockly`}
+              style={{ height: 'calc(100vh - 200px)' }}
+            />
+            <CodeMirror
+              value={source}
+              className="display-large large-codemirror"
+              options={{
+                mode: 'python',
+                lineNumbers: true
+              }}
+              onChange={(editor, data, value) => {}}
+            />
+          </div>
 
-        <div
-          className="toggle absolute fr btn fw6 mt4 mb4 white pointer f4 tc"
-          onClick={this.toggleCode}
-        >
-          {viewingCode ? 'View Blocks' : 'View Code'}
+          <CodeMirror
+            value={source}
+            className={`code${!viewingCode ? ' hidden' : ''} display-small`}
+            options={{
+              mode: 'python',
+              lineNumbers: true
+            }}
+            onChange={(editor, data, value) => {}}
+          />
+
+          <div
+            className="toggle fr btn fw6 mt4 mb4 white pointer f4 tc"
+            onClick={this.sendCode}
+          >
+            Send
+          </div>
+
+          <div
+            className="toggle fr mr3 btn fw6 mt4 mb4 white pointer f4 tc display-small"
+            onClick={this.toggleCode}
+          >
+            {viewingCode ? 'View Blocks' : 'View Code'}
+          </div>
         </div>
-
-        <div
-          className="toggle send absolute mr3 fr btn fw6 mt4 mb4 white pointer f4 tc"
-          onClick={this.sendCode}
-        >
-          Send
-        </div>
-
-        <CodeMirror
-          value={source}
-          className={`code${!viewingCode ? ' hidden' : ''}`}
-          options={{
-            mode: 'python',
-            lineNumbers: true
-          }}
-          onChange={(editor, data, value) => {}}
-        />
       </div>
     )
   }

@@ -121,8 +121,7 @@ input [type='text'] {
 .toggle {
   z-index: 3;
   padding: 10px;
-  bottom: -100px;
-  right: 32px;
+  margin: 20px;
 }
 .send {
   right: 150px;
@@ -142,4 +141,43 @@ input [type='text'] {
 .hidden {
   visibility: hidden;
   height: 0;
+}
+
+.display-large {
+  display: none;
+}
+
+.display-small {
+  display: inherit;
+}
+
+.blockly {
+  width: 100%;
+}
+
+.CodeMirror.cm-s-default {
+  height: calc(100vh - 200px);
+  width: 100%;
+}
+
+@media (min-width: 96rem) {
+  .large-codemirror {
+    width: 50%;
+    height: calc(100vh - 200px);
+    display: inline-block !important;
+    vertical-align: top;
+  }
+
+  .blockly {
+    display: inline-block;
+    width: 50%;
+  }
+
+  .display-large {
+    display: inherit;
+  }
+
+  .display-small {
+    display: none;
+  }
 }
