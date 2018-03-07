@@ -28,6 +28,7 @@ export default class Header extends React.Component {
               <div className="App-header ph2 pv3 cf">
                 <Link to="/">
                   <h2 className="App-title fl ma0 black f3">SmartShirt</h2>
+                  <span className="pl3">{this.props.msg}</span>
                 </Link>
                 <img
                   onClick={this.toggleMobileMenu}

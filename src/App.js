@@ -23,10 +23,21 @@ class App extends Component {
       blue: 0,
       red: 0,
       green: 0,
-      color_temp: 0
+      color_temp: 0,
+      ws_msg: ''
     }
 
-    this.ws = new Sockette('ws://localhost:80/ws', {
+    let ws_url = 'ws://localhost:80/ws'
+
+    if (typeof window !== 'undefined') {
+      if (window.location.protocol == 'http:') {
+        ws_url = 'ws://' + window.location.host + '/ws'
+      } else if (window.location.protocol == 'https:') {
+        ws_url = 'wss://' + window.location.host + '/ws'
+      }
+    }
+
+    this.ws = new Sockette(ws_url, {
       timeout: 5e3,
       maxAttempts: 10,
       onmessage: evt => {
@@ -45,15 +56,27 @@ class App extends Component {
             blue: data.value.b,
             color_temp: data.value.temp
           })
-      }
+      },
+      onopen: e =>
+        this.setState({
+          ws_msg: 'Connected'
+        }),
+      onclose: e =>
+        this.setState({
+          ws_msg: 'Disconnected'
+        }),
+      onerror: e =>
+        this.setState({
+          ws_msg: 'WebSocket Error'
+        })
     })
   }
   render() {
-    const { temp, lux, blue, red, green, color_temp } = this.state
+    const { temp, lux, blue, red, green, color_temp, ws_msg } = this.state
     return (
       <Router>
         <div className="App vh-100">
-          <Header />
+          <Header msg={ws_msg} />
           <div className="ph4 mw8 wrapper relative">
             <Switch>
               <Route exact path="/" component={Home} />
