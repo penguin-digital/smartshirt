@@ -1,4 +1,5 @@
 import React from 'react'
+
 import bla from '../assets/icons/bla.svg'
 import fb from '../assets/icons/fb.svg'
 import sad from '../assets/icons/sad.svg'
@@ -11,14 +12,29 @@ export default class Settings extends React.Component {
     super(props)
     this.state = {
       text: 'Custom text',
-      range1: 0,
-      range2: 0,
-      range3: 0,
-      range4: 0
+      brightness: 0,
+      red: 0,
+      green: 0,
+      blue: 0
     }
   }
 
-  componentWillUpdate(nextProps, nextState) {}
+  componentWillUpdate(nextProps, nextState) {
+    if (this.state !== nextState) {
+      var msg = {
+        name: 'text',
+        value: {
+          text: nextState.text,
+          brightness: nextState.brightness,
+          red: nextState.red,
+          green: nextState.green,
+          blue: nextState.blue
+        }
+      }
+
+      this.props.ws.send(JSON.stringify(msg))
+    }
+  }
 
   render() {
     return (
@@ -29,56 +45,48 @@ export default class Settings extends React.Component {
           id="customText"
           label="Custom text"
           className="w-80 h2"
-          onChange={() =>
-            this.setState({ text: document.getElementById('customText').value })
-          }
+          value={this.state.text}
+          onChange={e => this.setState({ text: e.target.value })}
         />
-        <div className="pv2"> {this.state.text}</div>
 
         <div className="apply btn fw6 mt4 mb4 white f4 tc">Apply</div>
 
         <div className="f3 pv4">Helligkeit</div>
         <input
-          id="range1"
+          id="brightness"
           type="range"
           className="w-90"
           defaultValue="0"
-          onChange={() =>
-            this.setState({ range1: document.getElementById('range1').value })
+          onChange={e =>
+            this.setState({ brightness: parseInt(e.target.value, 10) })
           }
         />
-        <div className="f4 pv2">Value: {this.state.range1}</div>
+        <div className="f4 pv2">Value: {this.state.brightness}</div>
         <div className="f3 pv4">Farbe</div>
         <input
-          id="range2"
+          id="red"
           type="range"
           className="w-90 mt3"
           defaultValue="0"
-          onChange={() =>
-            this.setState({ range2: document.getElementById('range2').value })
-          }
+          onChange={e => this.setState({ red: parseInt(e.target.value, 10) })}
         />
-        <div className="f4 pv2">Rot: {this.state.range2}</div>
+        <div className="f4 pv2">Rot: {this.state.red}</div>
         <input
-          id="range3"
+          id="green"
           type="range"
           className="w-90 mt3"
           defaultValue="0"
-          onChange={() =>
-            this.setState({ range3: document.getElementById('range3').value })
-          }
+          onChange={e => this.setState({ green: parseInt(e.target.value, 10) })}
         />
-        <div className="f4 pv2">Grun: {this.state.range3}</div>
+        <div className="f4 pv2">Grun: {this.state.green}</div>
         <input
-          id="range4"
+          id="blue"
           type="range"
           className="w-90 mt3"
           defaultValue="0"
-          onChange={() =>
-            this.setState({ range4: document.getElementById('range4').value })
-          }
+          onChange={e => this.setState({ blue: parseInt(e.target.value, 10) })}
         />
-        <div className="f4 pv2">Brau: {this.state.range4}</div>
+        <div className="f4 pv2">Brau: {this.state.blue}</div>
 
         <div className="flex">
           <div className="bg-yellow w-10 h2 mr3 mv4" />

@@ -39,6 +39,9 @@ class MainHandler(tornado.web.RequestHandler):
 # Tornado Websocket Handlers
 class WSHandler(tornado.websocket.WebSocketHandler):
 
+    def check_origin(self, origin):
+        return True
+
     def open(self):
         print '[WS] Connection was opened.'
         self.msg_temp_loop = tornado.ioloop.PeriodicCallback(self.msg_temp, 200)
@@ -64,9 +67,9 @@ class WSHandler(tornado.websocket.WebSocketHandler):
         self.write_message(json.dumps({
             'name' : 'color',
             'value' : {
-                'r' : time.time(),
-                'g' : time.time(),
-                'b' : time.time(),
+                'r' : 55,
+                'g' : 66,
+                'b' : 77,
                 'c' : time.time(),
                 'temp' : time.time(),
                 'lux' : time.time()%1000

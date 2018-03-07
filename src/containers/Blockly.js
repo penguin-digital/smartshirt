@@ -29,6 +29,14 @@ class BlocklyEditor extends Component {
       viewingCode: !this.state.viewingCode
     })
   }
+  sendCode = () => {
+    const msg = {
+      name: 'code',
+      value: this.state.source
+    }
+
+    this.props.ws.send(JSON.stringify(msg))
+  }
   componentDidMount() {
     const workspace = this.Blockly.inject('blocklyDiv', {
       toolbox: xmlCode
