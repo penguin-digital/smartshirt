@@ -120,9 +120,12 @@ input [type='text'] {
 
 .toggle {
   z-index: 3;
-  top: 50px;
-  right: 50px;
   padding: 10px;
+  bottom: -100px;
+  right: 32px;
+}
+.send {
+  right: 150px;
 }
 
 /* BLOCKLY */
@@ -131,6 +134,12 @@ input [type='text'] {
   z-index: 1;
 }
 
+.code {
+  height: calc(100vh - 220px);
+  width: 100%;
+}
+
 .hidden {
   visibility: hidden;
+  height: 0;
 }

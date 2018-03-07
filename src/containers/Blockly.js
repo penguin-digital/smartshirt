@@ -51,22 +51,29 @@ class BlocklyEditor extends Component {
     return (
       <div style={{ marginTop: '60px' }}>
         <div
-          className="toggle btn absolute fw6 mt4 mb4 white pointer f4 tc"
+          ref="blocklyDiv"
+          id="blocklyDiv"
+          className={`${viewingCode ? 'dn' : ''}`}
+          style={{ height: 'calc(100vh - 220px)', width: '100%' }}
+        />
+
+        <div
+          className="toggle absolute fr btn fw6 mt4 mb4 white pointer f4 tc"
           onClick={this.toggleCode}
         >
           {viewingCode ? 'View Blocks' : 'View Code'}
         </div>
 
         <div
-          ref="blocklyDiv"
-          id="blocklyDiv"
-          className={`${viewingCode ? 'dn' : ''}`}
-          style={{ height: '90vh', width: '100%' }}
-        />
+          className="toggle send absolute mr3 fr btn fw6 mt4 mb4 white pointer f4 tc"
+          onClick={this.sendCode}
+        >
+          Send
+        </div>
 
         <CodeMirror
           value={source}
-          className={`${!viewingCode ? 'hidden' : ''}`}
+          className={`code${!viewingCode ? ' hidden' : ''}`}
           options={{
             mode: 'python',
             lineNumbers: true
