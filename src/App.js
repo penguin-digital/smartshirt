@@ -29,13 +29,13 @@ class App extends Component {
 
     let ws_url = 'ws://localhost:80/ws'
 
-    // if (typeof window !== 'undefined') {
-    //   if (window.location.protocol === 'http:') {
-    //     ws_url = 'ws://' + window.location.host + '/ws'
-    //   } else if (window.location.protocol === 'https:') {
-    //     ws_url = 'wss://' + window.location.host + '/ws'
-    //   }
-    // }
+    if (typeof window !== 'undefined') {
+      if (window.location.protocol === 'http:') {
+        ws_url = 'ws://' + window.location.host + '/ws'
+      } else if (window.location.protocol === 'https:') {
+        ws_url = 'wss://' + window.location.host + '/ws'
+      }
+    }
 
     this.ws = new Sockette(ws_url, {
       timeout: 5e3,
