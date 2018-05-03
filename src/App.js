@@ -17,6 +17,7 @@ class App extends Component {
   constructor(props) {
     super(props)
 
+    // all the options and readings
     this.state = {
       temp: 0,
       lux: 0,
@@ -27,9 +28,12 @@ class App extends Component {
       ws_msg: ''
     }
 
+    // define default websocket url
     let ws_url = 'ws://localhost:80/ws'
 
+    // check for window to prevent build error
     if (typeof window !== 'undefined') {
+      // set proper websocket address based on used protocol
       if (window.location.protocol === 'http:') {
         ws_url = 'ws://' + window.location.host + '/ws'
       } else if (window.location.protocol === 'https:') {
@@ -37,17 +41,21 @@ class App extends Component {
       }
     }
 
+    // create a new websocket connection with the server
     this.ws = new Sockette(ws_url, {
       timeout: 5e3,
       maxAttempts: 10,
       onmessage: evt => {
+        // when the socket passes a message parse the data
         const data = JSON.parse(evt.data)
 
+        // if the name of the event is temp set the temperature reading
         if (data.name === 'temp')
           this.setState({
             temp: data.value
           })
 
+        // if the event name is color set the color related data
         if (data.name === 'color')
           this.setState({
             lux: data.value.lux,
@@ -57,6 +65,7 @@ class App extends Component {
             color_temp: data.value.temp
           })
       },
+      // use the other events to show a msg in the header
       onopen: e =>
         this.setState({
           ws_msg: 'Connected'

@@ -1,5 +1,8 @@
+// setup of the custom as well as the default blocks that
+// can be added from the toolbox
 const Blockly = window.Blockly
 
+// CUSTOM BLOCKS ----------------
 Blockly.Blocks['init_strip'] = {
   init: function() {
     this.jsonInit({
@@ -164,6 +167,7 @@ Blockly.Python['theaterChaseRainbow'] = function(block) {
   return 'theaterChaseRainbow(strip)\n'
 }
 
+// DEFAULT TOOLBOX ----------------
 export default `<xml id="toolbox" style="display: none">
     <category name="Smartshirt">
       <block type="init_strip"></block>

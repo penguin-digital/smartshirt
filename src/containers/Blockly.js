@@ -24,11 +24,15 @@ class BlocklyEditor extends Component {
 
     this.Blockly = window.Blockly
   }
+
+  // toggle wether the code is viewed, on mobile devices
   toggleCode = () => {
     this.setState({
       viewingCode: !this.state.viewingCode
     })
   }
+
+  // send code to the server via websocket
   sendCode = () => {
     const msg = {
       name: 'code',
@@ -37,7 +41,9 @@ class BlocklyEditor extends Component {
 
     this.props.ws.send(JSON.stringify(msg))
   }
+
   componentDidMount() {
+    // on component mount setup the workspace and toolbox
     const workspace = this.Blockly.inject('blocklyDiv', {
       toolbox: xmlCode
     })
@@ -47,6 +53,7 @@ class BlocklyEditor extends Component {
       workspace
     )
 
+    // on blockly update, parse the code to Python and update the codemirror
     workspace.addChangeListener(() => {
       this.setState({
         source: this.Blockly.Python.workspaceToCode(workspace)

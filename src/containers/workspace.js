@@ -1,3 +1,4 @@
+// setup of the default blocks in the workspace in xml
 export default `<xml xmlns="http://www.w3.org/1999/xhtml" id="workspaceBlocks" style="display:none">
   <variables></variables>
   <block type="init_strip" x="20" y="20">
